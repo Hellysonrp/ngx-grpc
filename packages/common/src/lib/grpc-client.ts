@@ -1,4 +1,4 @@
-import { Metadata } from 'grpc-web';
+import { Metadata, GrpcWebClientBaseOptions } from 'grpc-web';
 import { Observable } from 'rxjs';
 import { GrpcEvent } from './grpc-event';
 import { GrpcMessage } from './grpc-message';
@@ -64,10 +64,8 @@ export interface GrpcClient {
 /**
  * Settings for the chosen implementation of GrpcClient
  */
-export interface GrpcClientSettings {
+export interface GrpcClientSettings extends GrpcWebClientBaseOptions {
   host: string;
-  format?: string;
-  suppressCorsPreflight?: boolean;
 }
 
 /**
